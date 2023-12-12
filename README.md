@@ -11,10 +11,27 @@ Crack the punch-card system via http post.
 3. Install `requests==2.28.1` and `urllib3==1.26.13`.
 Here is a possible way:
 ```
-pip install requests==2.28.1
-pip install urllib3==1.26.13
+pip install -r requirements.txt
 ```
 ## Usage
+
+### Get Your CardId
+
+Use your phone's NFC function to get your cardId.
+
+#### CardId Calculation Method
+
+When you get your real card ID, you can calculate your cardId(in system) by the following method:
+- Divide each 2 hex digits into a group, and reverse the order of each group.
+- Change it into Decimal.
+
+#### Example
+
+CardId: 07D72B1C
+Reverse each group: 1C2BD707
+Change it into Decimal: 472635143
+
+So, cardId(in system) is 472635143.
 
 ### Punch Card 
 
@@ -29,7 +46,7 @@ DeviceId = ""
 punchCard(CardId, DeviceId)
 ```
 
-* The `cardId` is the **RFID** of your current school card. You can get your RFID by placing your school card on the hot water machine in your dormitory.
+* The `cardId` get it with the above.
 
 * The `DeviceId` is the **MAC address** of your class computer. You can find it by call `checkRecord()` method. **Notice that the MAC address letters are capitalized.**
 
@@ -45,6 +62,6 @@ CardId = ""
 exportRecordCSV(CardId, "record.csv")
 ```
 
-* The `cardId` is the **RFID** of your current school card. You can get your RFID by placing your school card on the hot water machine in your dormitory.
+* The `cardId` get it with the above.
 
 * The `exportFileName` is the csv file name to generate. After proceed this method, you can find your recent `DeviceId`.
