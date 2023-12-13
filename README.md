@@ -1,4 +1,4 @@
-# `punch-crack-dev`
+# Punch - Crack DEV
 
 Crack the punch-card system via http post.
 
@@ -15,23 +15,23 @@ pip install -r requirements.txt
 ```
 ## Usage
 
-### Get Your CardId
+### Get Your `CardId`
 
-Use your phone's NFC function to get your cardId.
+Use your phone's NFC function to get your `cardId`.
 
 #### CardId Calculation Method
 
-When you get your real card ID, you can calculate your cardId(in system) by the following method:
+When you get your real card ID, you can calculate your `cardId` (in system) by the following method:
 - Divide each 2 hex digits into a group, and reverse the order of each group.
 - Change it into Decimal.
 
 #### Example
 
-CardId: 07D72B1C
-Reverse each group: 1C2BD707
-Change it into Decimal: 472635143
+* CardId: `07D72B1C`
+* Reverse each group: `1C2BD707`
+* Change it into Decimal: `472635143`
 
-So, cardId(in system) is 472635143.
+So, cardId (in system) is `472635143`.
 
 ### Punch Card 
 
